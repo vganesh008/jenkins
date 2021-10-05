@@ -8,20 +8,18 @@ pipeline{
         }
         stage('D hub'){
             steps{
-                // This step should not normally be used in your script. Consult the inline help for details.
+                script{
+                    // This step should not normally be used in your script. Consult the inline help for details.
 withDockerRegistry(credentialsId: '9c11aff2-7e5c-40eb-9ceb-6c437eba7984', url: 'https://hub.docker.com/') {
     // some block
 }
+                }
+                
             }
         }
         stage('image build'){
             steps{
                 sh 'docker build -t vganesh008:test01 .'
-            }
-        }
-         stage('image pudg to hub'){
-            steps{
-                sh 'docker push vganesh008:test01 .'
             }
         }
         stage('container test'){
