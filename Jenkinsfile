@@ -18,7 +18,7 @@ pipeline{
         }
         stage('container build'){
             steps{
-                sh 'docker -H tcp://172.31.17.132:2375 run --rm -dit -p 8000:80 --name ganesh --hostname test vganesh008:test01'
+                sh 'docker -H tcp://172.31.17.132:2375 run --rm -dit -p 8000:80 --name ganesh --hostname test nginx'
             }
         }
          stage('container post test'){
