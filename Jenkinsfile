@@ -19,7 +19,7 @@ pipeline{
         stage('container kill'){
             steps{
                 sh 'docker -H tcp://172.31.17.132:2375 ps -aq'
-                sh 'docker -H tcp://172.31.17.132:2375 rmi $(docker ps -qa)'
+                sh 'docker -H tcp://172.31.17.132:2375 stop $(docker ps -qa)'
             }
         }    
         stage('container build'){
