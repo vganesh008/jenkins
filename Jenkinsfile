@@ -16,10 +16,10 @@ pipeline{
                 sh 'docker -H tcp://172.31.17.132:2375 ps'
             }
         }
-        stage('container kill'){
+        stage('container'){
             steps{
                 sh 'docker -H tcp://172.31.17.132:2375 ps -aq'
-                sh 'docker -H tcp://172.31.17.132:2375 kill ganesh'
+               
             }
         }    
         stage('container build'){
