@@ -1,0 +1,30 @@
+packer {
+  provider_plugin {
+    amazon = {
+      version = ""
+      source = ""
+    }
+  }
+}
+
+source "amazon-ebs" "ec2" {
+  ami_name = ""
+  source_ami = ""
+  instance_type = ""
+  region = ""
+  access_key = 
+  security_key =
+}
+
+build {
+  sources = [ "source.amazon-ebs.ec2" ]
+  provisioner "shell" {
+    inline = [
+
+    ]
+  provisioner "ansible" {
+    playbook_file = 
+  }
+}
+
+# done created by file
